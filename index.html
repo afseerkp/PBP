@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects Bulk Piping Middle East FZE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SzlrxWriC3XhYp3uLQ4J8XIiQm1HIb8z9WfX3xz9j1kC0JpG4szrF3c5lZP5hVb5d4dK7V3z0eVd2O3rFFu9ZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="wp-content/uploads/2021/05/petro-logo-fav.png" />
+  <style>
+    :root {
+      --bg: #060614;
+      --card: rgba(255, 255, 255, 0.07);
+      --card-strong: rgba(255, 255, 255, 0.12);
+      --stroke: rgba(255, 255, 255, 0.13);
+      --text: #f4f7ff;
+      --muted: #c5d1e6;
+      --accent: #02EBF7;
+      --accent-2: #A102F7;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+      --blur: blur(18px);
+      --max-width: 1180px;
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+    body { min-height: 100vh; position: relative; }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(1100px at 20% 26%, rgba(2, 235, 247, 0.38), transparent),
+        radial-gradient(1000px at 78% 16%, rgba(161, 2, 247, 0.34), transparent),
+        linear-gradient(145deg, rgba(2, 235, 247, 0.18), rgba(161, 2, 247, 0.14) 46%, rgba(6, 6, 20, 0.9)),
+        linear-gradient(135deg, #0a0a1a 0%, #060614 55%, #050513 100%);
+      z-index: -2;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      backdrop-filter: blur(28px) saturate(1.2);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: var(--blur);
+      -webkit-backdrop-filter: var(--blur);
+      background: rgba(5, 12, 26, 0.7);
+      border-bottom: 1px solid var(--stroke);
+    }
+    .nav-shell {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; letter-spacing: 0.4px; }
+    .brand img { height: 42px; width: auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35)); }
+
+    nav { display: flex; align-items: center; gap: 12px; justify-content: center; }
+    .nav-links { display: flex; gap: 12px; align-items: center; justify-content: center; text-align: center; }
+    .nav-links a { padding: 10px 14px; border-radius: 12px; color: var(--muted); font-weight: 600; transition: all .2s ease; letter-spacing: 0.1px; }
+    .nav-links a:hover { color: var(--text); background: var(--card); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
+    .pill-btn, .ghost-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 999px; padding: 10px 16px;
+      font-weight: 700; letter-spacing: 0.2px;
+      transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+      border: 1px solid transparent;
+    }
+    .pill-btn { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #040712; box-shadow: var(--shadow); }
+    .pill-btn:hover { transform: translateY(-2px) scale(1.01); }
+    .ghost-btn { background: rgba(255,255,255,0.06); border-color: var(--stroke); color: var(--text); }
+    .ghost-btn:hover { background: rgba(255,255,255,0.12); transform: translateY(-1px); }
+
+    .menu-toggle { display: none; background: none; border: 1px solid var(--stroke); color: var(--text); padding: 10px 12px; border-radius: 12px; }
+
+    main { max-width: var(--max-width); margin: 0 auto; padding: 32px 22px 80px; }
+
+    .glass { background: var(--card); border: 1px solid var(--stroke); border-radius: var(--radius); box-shadow: var(--shadow); backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur); }
+    .glass-strong { background: var(--card-strong); border: 1px solid rgba(255,255,255,0.2); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 72px 64px;
+      min-height: 78vh;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 32px;
+      background:
+        linear-gradient(140deg, rgba(2, 235, 247, 0.24), rgba(161, 2, 247, 0.36)),
+        linear-gradient(160deg, #0a0a1a 0%, #060614 60%, #050513 100%),
+        url('wp-content/uploads/2018/10/slider-1.jpg') center/cover no-repeat;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0) 60%);
+      pointer-events: none;
+    }
+    .hero h1 { font-size: clamp(40px, 4.6vw, 60px); margin: 0 0 18px; line-height: 1.02; }
+    .hero p.lead { color: var(--muted); font-size: 18px; margin: 0 0 26px; max-width: 720px; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0 32px; }
+    .chip { padding: 10px 16px; border-radius: 14px; background: rgba(255,255,255,0.09); border: 1px solid var(--stroke); color: var(--text); font-weight: 600; letter-spacing: 0.1px; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .stat-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 26px; }
+    .stat { padding: 14px 16px; border-radius: 14px; border: 1px solid var(--stroke); background: rgba(255,255,255,0.05); }
+    .stat strong { display: block; font-size: 22px; }
+
+    section { margin-top: 54px; }
+    section h2 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 34px); }
+    section p { margin: 0 0 18px; color: var(--muted); line-height: 1.6; }
+
+    .stack { display: grid; gap: 14px; }
+    .two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: stretch; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+
+    .card { padding: 20px; position: relative; overflow: hidden; }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px at 10% 20%, rgba(255,255,255,0.08), transparent),
+                  radial-gradient(600px at 90% 20%, rgba(255,255,255,0.05), transparent);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    .card h3 { margin: 0 0 8px; font-size: 19px; }
+    .card p { margin: 0 0 12px; }
+    .card a { font-weight: 700; color: var(--accent-2); }
+
+    .list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .list li { display: flex; align-items: center; gap: 10px; color: var(--muted); }
+    .list i { color: var(--accent-2); }
+
+    .band { border-radius: 22px; padding: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; align-items: center; }
+    .banner { border-radius: 22px; padding: 26px 28px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 18px; }
+    .banner h3 { margin: 0 0 8px; }
+    .banner p { margin: 0; color: var(--muted); }
+
+    .map { border-radius: var(--radius); overflow: hidden; min-height: 320px; border: 1px solid var(--stroke); }
+
+    footer { margin-top: 48px; text-align: center; color: var(--muted); padding: 22px 0 32px; border-top: 1px solid var(--stroke); background: rgba(0,0,0,0.25); }
+
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; padding: 36px 24px; }
+      .nav-links { display: none; flex-direction: column; align-items: flex-start; background: rgba(5,12,26,0.9); position: absolute; left: 16px; right: 16px; top: 72px; padding: 12px; border-radius: 14px; border: 1px solid var(--stroke); box-shadow: var(--shadow); }
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: inline-flex; }
+    }
+    @media (max-width: 640px) {
+      .nav-shell { padding: 12px 16px; }
+      main { padding: 18px 16px 60px; }
+      .hero { min-height: 65vh; }
+    }
+  </style>
+</head>
+<body>
+  <header class="glass">
+    <div class="nav-shell">
+      <a class="brand" href="#top">
+        <img src="wp-content/uploads/2018/11/learge-logo.png" alt="Projects Bulk Piping" />
+        <span>Projects Bulk Piping Middle East FZE</span>
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu"><i class="fa fa-bars"></i></button>
+      <nav>
+        <div class="nav-links" id="nav-links">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#industries">Industries</a>
+          <a href="#quality">Quality</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="ghost-btn" href="downloads/index.html">Downloads</a>
+        <a class="pill-btn" href="contact-us/index.html">Get a quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero glass-strong" id="hero">
+      <div>
+        <p class="lead" style="text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.7); margin-bottom: 10px;">Projects Bulk Piping Middle East FZE</p>
+        <h1>Protect supply. Power every project.</h1>
+        <p class="lead">From turn-key piping packages to urgent site needs, we deliver world-class pipes, fittings, flanges, valves, and services for Hydrocarbons, Power, Shipbuilding, and Utilities.</p>
+        <div class="chip-row">
+          <span class="chip">Dubai HQ · Jebel Ali Free Zone</span>
+          <span class="chip">Turn-key supply &amp; services</span>
+          <span class="chip">Global inventory &amp; logistics</span>
+        </div>
+        <div class="hero-cta">
+          <a class="pill-btn" href="products/index.html">View products</a>
+          <a class="ghost-btn" href="contact-us/index.html">Get a quote</a>
+        </div>
+        <div class="stat-bar">
+          <div class="stat">
+            <strong>Complete packages</strong>
+            <span>From first MTO to site-ready supply.</span>
+          </div>
+          <div class="stat">
+            <strong>Project oversight</strong>
+            <span>Integrated supply management &amp; consultancy.</span>
+          </div>
+          <div class="stat">
+            <strong>Multi-sector</strong>
+            <span>Energy, power, water, shipbuilding and more.</span>
+          </div>
+        </div>
+      </div>
+      <div class="glass card" style="align-self: stretch; display: grid; gap: 14px;">
+        <h3 style="margin:0;">Need quick help?</h3>
+        <p style="margin:0; color: var(--muted);">Tell us what you need and we will prepare a tailored material package.</p>
+        <div class="list" style="margin-top: 4px;">
+          <div class="list-item" style="display:flex; align-items:center; gap:10px; color: var(--muted);"><i class="fa fa-phone"></i><span>(+971) 4 881 1833</span></div>
+          <div class="list-item" style="display:flex; align-items:center; gap:10px; color: var(--muted);"><i class="fa fa-envelope"></i><a href="mailto:info@projectspiping.com">Email: info@projectspiping.com</a></div>
+          <div class="list-item" style="display:flex; align-items:center; gap:10px; color: var(--muted);"><i class="fa fa-fax"></i><span>(+971) 4 881 1832</span></div>
+          <div class="list-item" style="display:flex; align-items:center; gap:10px; color: var(--muted);"><i class="fa fa-location-dot"></i><span>W/H No.10, Jebel Ali Free Zone North, Dubai</span></div>
+          <div class="list-item" style="display:flex; align-items:center; gap:10px; color: var(--muted);"><i class="fa fa-building"></i><span>UK Office: 115 London Road, Morden, England, SM4 5HP</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="two-col">
+        <div class="glass card">
+          <h2>About Us</h2>
+          <p>Projects Bulk Piping Middle East FZE is a specialist global supplier of world-class piping products together with turn-key services, project supply management, and consultancy for Hydrocarbons, Power, Shipbuilding, and Utilities. Established and headquartered in Dubai, UAE, we provide a complete package of piping products, services, and solutions.</p>
+          <div class="chip-row">
+            <span class="chip">Turn-key supply</span>
+            <span class="chip">Global network</span>
+            <span class="chip">Consultancy</span>
+          </div>
+          <a class="ghost-btn" href="who-we-are/index.html">Learn more</a>
+        </div>
+        <div id="services" class="glass card" style="background: linear-gradient(160deg, rgba(2,235,247,0.15), rgba(161,2,247,0.12));">
+          <h3>Project Services</h3>
+          <p>Material take-off support, long-lead coordination, and rapid fulfillment from global inventory locations to keep your project on schedule.</p>
+          <a class="ghost-btn" href="services/index.html">Service overview</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="solutions">
+      <h2>Solutions at a glance</h2>
+      <p>Reliable, specified, and ready when you are. Pipes, fittings, flanges, valves, gaskets, and more in the grades, ODs, IDs, and wall thicknesses your projects demand.</p>
+      <div class="grid">
+        <div class="glass card">
+          <h3>Pipes</h3>
+          <ul class="list">
+            <li><i class="fa fa-circle"></i><a href="carbon-steel-pipes/index.html">Carbon Steel</a></li>
+            <li><i class="fa fa-circle"></i><a href="stainless-pipes/index.html">Stainless</a></li>
+            <li><i class="fa fa-circle"></i><a href="low-temp-carbon-steel-pipe/index.html">Low Temp Carbon Steel</a></li>
+            <li><i class="fa fa-circle"></i><a href="duplex-super-duplex-pipes/index.html">Duplex / Super Duplex</a></li>
+            <li><i class="fa fa-circle"></i><a href="nickel-alloy-pipe/index.html">Nickel Alloy</a></li>
+            <li><i class="fa fa-circle"></i><a href="chrome-pipes/index.html">Chrome</a></li>
+          </ul>
+        </div>
+        <div class="glass card">
+          <h3>Fittings</h3>
+          <ul class="list">
+            <li><i class="fa fa-circle"></i><a href="carbon-steel-fittings/index.html">Carbon Steel</a></li>
+            <li><i class="fa fa-circle"></i><a href="stainless-fittings/index.html">Stainless</a></li>
+            <li><i class="fa fa-circle"></i><a href="low-temp-carbon-steel-fittings/index.html">Low Temp Carbon Steel</a></li>
+            <li><i class="fa fa-circle"></i><a href="duplex-super-duplex-fittings/index.html">Duplex / Super Duplex</a></li>
+            <li><i class="fa fa-circle"></i><a href="nickel-alloy-pipe-fittings/index.html">Nickel Alloy</a></li>
+            <li><i class="fa fa-circle"></i><a href="chrome-fittings/index.html">Chrome</a></li>
+          </ul>
+        </div>
+        <div class="glass card">
+          <h3>Flanges</h3>
+          <ul class="list">
+            <li><i class="fa fa-circle"></i><a href="carbon-steel-flanges/index.html">Carbon Steel</a></li>
+            <li><i class="fa fa-circle"></i><a href="stainless-steel-pipe-flanges/index.html">Stainless Steel</a></li>
+            <li><i class="fa fa-circle"></i><a href="low-temp-carbon-steel-flanges/index.html">Low Temp Carbon Steel</a></li>
+            <li><i class="fa fa-circle"></i><a href="duplex-super-duplex-flanges/index.html">Duplex / Super Duplex</a></li>
+            <li><i class="fa fa-circle"></i><a href="nickel-alloy-pipe-flanges/index.html">Nickel Alloy</a></li>
+            <li><i class="fa fa-circle"></i><a href="chrome-flanges/index.html">Chrome</a></li>
+          </ul>
+        </div>
+        <div class="glass card">
+          <h3>Valves &amp; Gaskets</h3>
+          <ul class="list">
+            <li><i class="fa fa-circle"></i><a href="valves/index.html">Valves</a></li>
+            <li><i class="fa fa-circle"></i><a href="gaskets/index.html">Gaskets</a></li>
+            <li><i class="fa fa-circle"></i><a href="studbolts/index.html">Studbolts</a></li>
+          </ul>
+        </div>
+        <div class="glass card">
+          <h3>Additional Supply</h3>
+          <ul class="list">
+            <li><i class="fa fa-circle"></i><a href="Elecrical and elecronics/index.html">Electrical &amp; Electronics</a></li>
+            <li><i class="fa fa-circle"></i><a href="Diesel Generators/index.html">Diesel Generators</a></li>
+            <li><i class="fa fa-circle"></i><a href="products/index.html">Full product catalog</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="industries">
+      <div class="band glass">
+        <div>
+          <h2>Industries we power</h2>
+          <p>One of the largest distributors of pipe, valve, and fitting products and services to energy and industrial markets. Built for demanding greenfield and brownfield environments.</p>
+          <div class="chip-row">
+            <a class="chip" href="oil-gas/index.html">Oil &amp; Gas</a>
+            <a class="chip" href="power/index.html">Power</a>
+            <a class="chip" href="water/index.html">Water</a>
+          </div>
+        </div>
+        <div class="glass card">
+          <h3 id="quality">Quality &amp; Assurance</h3>
+          <p>Our quality policy, assurance, and control programs meet international standards across every shipment.</p>
+          <div class="chip-row">
+            <a class="chip" href="quality-policy/index.html">Quality Policy</a>
+            <a class="chip" href="quality-assurance/index.html">Quality Assurance</a>
+            <a class="chip" href="quality-control/index.html">Quality Control</a>
+          </div>
+          <a class="ghost-btn" href="downloads/index.html">Download approvals</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="banner glass">
+        <div>
+          <h3>Ready to start your next project?</h3>
+          <p>PROJECTS BULK PIPING MIDDLE EAST FZE · W/H NO.10 · P.O.BOX – 261307 · JEBEL ALI FREE ZONE NORTH · DUBAI · UNITED ARAB EMIRATES</p>
+          <p style="margin-top: 8px; color: var(--muted);">UK Office: PROJECTS BULK PIPING LTD · 115 London Road, Morden, England, SM4 5HP</p>
+          <div class="chip-row">
+            <span class="chip"><i class="fa fa-phone"></i>&nbsp;(+971) 4 881 1833</span>
+            <span class="chip"><i class="fa fa-fax"></i>&nbsp;(+971) 4 881 1832</span>
+            <a class="chip" href="mailto:info@projectspiping.com"><i class="fa fa-envelope"></i>&nbsp;Email: info@projectspiping.com</a>
+          </div>
+        </div>
+        <div class="hero-cta" style="justify-content: flex-end; gap: 10px;">
+          <a class="pill-btn" href="contact-us/index.html">Talk to us</a>
+          <a class="ghost-btn" href="downloads/index.html">Downloads</a>
+        </div>
+      </div>
+      <div class="map glass" style="margin-top: 16px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.9518190020513!2d55.0866621143298!3d25.001753083987495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f1260a443f1af%3A0x7ef35e51bb8a926c!2sPROJECTS%20BULK%20PIPING%20MIDDLE%20EAST%20FZE!5e0!3m2!1sen!2sae!4v1648549921820!5m2!1sen!2sae" width="100%" height="420" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="glass">
+    <p>&copy; 2024 Projects Bulk Piping Middle East FZE. All rights reserved.</p>
+    <p style="margin-top: 8px;">W/H No.10 · P.O.BOX – 261307 · Jebel Ali Free Zone North · Dubai · UAE</p>
+    <p style="margin-top: 8px;">UK Office: PROJECTS BULK PIPING LTD · 115 London Road, Morden, England, SM4 5HP</p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const links = document.getElementById('nav-links');
+    toggle.addEventListener('click', () => {
+      links.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
